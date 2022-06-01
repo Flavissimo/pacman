@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pacman_Nyam-nyam</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game">
+        <div class="game__cross">
+            <div class="game__cross__img"></div>
+          </div>
+      <div class="pacman-path">
+        <div class="pacman-path__dots">
+          <svg class="pacman" id="pacman" viewBox="0 0 100 100">
+            <!--viewbox опередляет расположение и размеры окна для svg-->
+            <circle class="pacman__body" cx="50%" cy="50%" r="25%" />
+            <rect
+              class="pacman__eye"
+              width="12"
+              height="6"
+              x="32"
+              y="20"
+              fill="#000"
+            />
+          </svg>
+        </div>
+        <div class="pacman-path__last-dot"></div>
+      </div>
+    </div>
+    <div class="presentation">
+      <div class="pacman-svg">
+        <svg class="pacman" id="pacman" viewBox="0 0 100 100">
+          <!--viewbox опередляет расположение и размеры окна для svg-->
+          <circle class="pacman__body" cx="50%" cy="50%" r="25%" />
+          <circle class="pacman__eye" cx="35%" cy="20%" r="5%" fill="#000" />
+        </svg>
+      </div>
+      <div class="btn">
+        <button class="btn__button">Chomp it?</button>
+      </div>
+    </div>
+    <div class="checkbox"></div>
+    <script async src="script.js"></script>
+  </body>
+</html>

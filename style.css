@@ -1,0 +1,196 @@
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+}
+
+.game {
+  display: none;
+}
+
+.visibility {
+  display: block;
+  margin-top: 90px;
+}
+.game__cross {
+  position: absolute;
+  top: 0;
+  left: 90%;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.game__cross:hover {
+  opacity: 0.6;
+}
+
+.game__cross__img {
+  background-image: url(img/cross.png);
+  object-fit: contain;
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/*from https://www.flaticon.com/authors/creative-stall-premium*/
+
+.pacman-path {
+  display: flex;
+  justify-content: center;
+  margin: 0 60px;
+}
+
+#pacman {
+  width: 200px;
+}
+
+#pacman .pacman__body {
+  stroke: #f9f900;
+  fill: none;
+  stroke-width: 50%;
+  z-index: 50;
+  animation: chomp 0.2s linear infinite alternate;
+}
+/*Если радиус -25, диаметр -50, 
+то circumference = 2,14 * 50 = 157, 
+но нам нужно 80%, т.е. 127*/
+
+.pacman-path__dots {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to left,
+    rgb(55, 35, 35) 20%,
+    transparent 10%
+  );
+  -webkit-background-image: linear-gradient(
+    to left,
+    rgb(55, 35, 35) 20%,
+    transparent 10%
+  );
+  -moz-background-image: linear-gradient(
+    to left,
+    rgb(55, 35, 35) 20%,
+    transparent 10%
+  );
+  background-position: center right;
+  background-size: 50px 10px;
+  background-repeat: repeat-x;
+  animation: dots 8s linear infinite;
+}
+
+.pacman-path__last-dot {
+  background-image: url(img/giftbox.png);
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  background-repeat: no-repeat;
+  animation: present 2s linear infinite;
+}
+/*from https://www.flaticon.com/authors/freepik*/
+
+@keyframes present {
+  from {
+    background-position: top;
+  }
+  to {
+    background-position: bottom;
+    opacity: 0;
+  }
+}
+
+@keyframes dots {
+  from {
+    width: 95%;
+  }
+  to {
+    width: 10%;
+  }
+}
+
+@-webkit-keyframes dots {
+  from {
+    width: 95%;
+  }
+  to {
+    width: 10%;
+  }
+}
+@-moz-keyframes dots {
+  from {
+    width: 95%;
+  }
+  to {
+    width: 10%;
+  }
+}
+
+@keyframes chomp {
+  from {
+    stroke-dasharray: 157, 50;
+    stroke-dashoffset: 0;
+    margin-left: -20%;
+  }
+  to {
+    stroke-dasharray: 127, 50;
+    stroke-dashoffset: -15;
+    margin-left: 100%;
+  }
+}
+
+@-webkit-keyframes chomp {
+  from {
+    stroke-dasharray: 157, 50;
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dasharray: 127, 50;
+    stroke-dashoffset: -15;
+  }
+}
+@-moz-keyframes chomp {
+  from {
+    stroke-dasharray: 157, 50;
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dasharray: 127, 50;
+    stroke-dashoffset: -15;
+  }
+}
+.presentation {
+  display: block;
+}
+
+.presentation__off {
+  display: none;
+}
+
+.pacman-svg {
+  display: flex;
+  justify-content: center;
+  margin: 40px 20px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  background-color: #f9f900;
+}
+
+.btn__button {
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 28px;
+  padding: 10px;
+}
+
+.btn__button:hover {
+  text-shadow: 3px 0 4px #000;
+}
